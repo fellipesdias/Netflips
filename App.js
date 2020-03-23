@@ -16,10 +16,8 @@ const App = () => {
 
   return (
     <View nativeID="container" style={styles.container}>
-      <View nativeID="header" style={styles.header}>
-        <Text style={styles.headerText}>ENTRAR</Text>
-      </View>
       <View nativeID="body" style={styles.form}>
+        <Text style={styles.headerText2}>ENTRAR</Text>
         <TextInput
           returnKeyType="next"
           keyboardType="email-address"
@@ -77,7 +75,7 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   header: {
-    backgroundColor: '#000000',
+    backgroundColor: '#ECC5DB',
     height: 70,
     justifyContent: 'center',
     paddingLeft: 30,
@@ -87,8 +85,14 @@ const styles = StyleSheet.create({
     color: '#fff',
     fontSize: 26,
   },
+  headerText2: {
+    color: '#fff',
+    fontSize: 26,
+    fontWeight: 'bold',
+    paddingBottom: 25,
+  },
   form: {
-    justifyContent: 'flex-start',
+    justifyContent: 'center',
     flex: 1,
     backgroundColor: '#000000',
     paddingHorizontal: 20,

@@ -10,20 +10,40 @@ import {
 } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
-const Login = () => {
+const Login = ({navigation}) => {
   const [checked, setChecked] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [user, setUser] = useState('');
+  const [password, setPassword] = useState('');
+  const [msg, setMsg] = useState(null);
+
+  const login = () => {
+    setMsg('');
+    if (!user || !password) {
+      setMsg('Credenciais inválidas');
+      return;
+    }
+    setLoading(true);
+
+    new Promise(resolve => setTimeout(resolve, 1000)).then(() => {
+      setLoading(false);
+      navigation.navigate('Perfis');
+    });
+  };
 
   return (
     <View nativeID="container" style={styles.container}>
       <View nativeID="body" style={styles.form}>
         <Text style={styles.bodyText}>ENTRAR</Text>
+
+        <Text style={{color: '#f60'}}>{msg}</Text>
         <TextInput
           returnKeyType="next"
           keyboardType="email-address"
           style={styles.input}
           placeholder="Email ou Número de telefone"
           placeholderTextColor="#9a9a9a"
+          onChangeText={text => setUser(text)}
         />
         <TextInput
           returnKeyType="go"
@@ -31,12 +51,13 @@ const Login = () => {
           style={styles.input}
           placeholder="Senha"
           placeholderTextColor="#9a9a9a"
+          onChangeText={text => setPassword(text)}
         />
 
         <TouchableOpacity
           style={styles.button}
           onPress={() => {
-            setLoading(!loading);
+            login();
           }}>
           {loading ? (
             <ActivityIndicator size="small" color="#fff" />

@@ -36,7 +36,7 @@ const Login = ({navigation}) => {
       <View nativeID="body" style={styles.form}>
         <Text style={styles.bodyText}>ENTRAR</Text>
 
-        <Text style={{color: '#f60'}}>{msg}</Text>
+        <Text style={styles.Errortext}>{msg}</Text>
         <TextInput
           returnKeyType="next"
           keyboardType="email-address"
@@ -140,5 +140,8 @@ const styles = StyleSheet.create({
   loginUrl: {
     fontSize: 16,
     color: 'gray',
+  },
+  Errortext: {
+    color: '#f60',
   },
 });

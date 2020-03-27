@@ -3,6 +3,7 @@ import {NavigationContainer} from '@react-navigation/native';
 import * as React from 'react';
 import Login from './src/screens/Login';
 import Perfis from './src/screens/Perfis';
+import Home from './src/screens/Home';
 
 const Stack = createStackNavigator();
 
@@ -20,6 +21,13 @@ function App() {
         <Stack.Screen
           name="Perfis"
           component={Perfis}
+          options={{
+            headerShown: false,
+          }}
+        />
+        <Stack.Screen
+          name="Home"
+          component={Home}
           options={{
             headerShown: false,
           }}

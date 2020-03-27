@@ -11,11 +11,10 @@ import {
 import Icon from 'react-native-vector-icons/MaterialIcons';
 
 const Perfis = ({navigation}) => {
-  //const [pressed, setPressed] = useState(false);
   const users = [
     {
       id: 1,
-      name: 'Rita',
+      name: 'Jéssica',
       uri:
         'https://br.web.img2.acsta.net/r_640_360/newsv7/19/12/07/21/42/1848130.jpg',
     },
@@ -32,6 +31,7 @@ const Perfis = ({navigation}) => {
         'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRTqfxPmAp6XVOM8M3Uadg0_IOx8G6YRFamx0k5J4eno_oW9xjo&s',
     },
   ];
+
   return (
     <View nativeID="container" style={styles.container}>
       <View nativeID="header" style={styles.header}>
@@ -45,7 +45,11 @@ const Perfis = ({navigation}) => {
           data={users}
           keyExtractor={item => item.id}
           renderItem={({item}) => (
-            <ProfileButton name={item.name} uri={item.uri} />
+            <ProfileButton
+              name={item.name}
+              uri={item.uri}
+              navigation={navigation}
+            />
           )}
         />
         <View>
@@ -56,13 +60,18 @@ const Perfis = ({navigation}) => {
     </View>
   );
 };
-const ProfileButton = ({name, uri}) => {
+const ProfileButton = ({name, uri, navigation}) => {
   return (
-    <TouchableOpacity style={styles.ProfileButton}>
+    <TouchableOpacity
+      style={styles.ProfileButton}
+      onPress={() => navigation.navigate('Home')}>
       <Image style={styles.images} source={{uri}} />
       <Text style={styles.profileText}>{name}</Text>
     </TouchableOpacity>
   );
+};
+Perfis.navigationOptions = {
+  title: 'Home',
 };
 
 export default Perfis;

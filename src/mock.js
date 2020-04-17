@@ -1,3 +1,24 @@
+export const users = [
+  {
+    id: 1,
+    name: 'Jéssica',
+    uri:
+      'https://br.web.img2.acsta.net/r_640_360/newsv7/19/12/07/21/42/1848130.jpg',
+  },
+  {
+    id: 2,
+    name: 'Alberto',
+    uri:
+      'https://townsquare.media/site/442/files/2015/04/ddbig-630x420.jpg?w=980&q=75',
+  },
+  {
+    id: 3,
+    name: 'Juca',
+    uri:
+      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRTqfxPmAp6XVOM8M3Uadg0_IOx8G6YRFamx0k5J4eno_oW9xjo&s',
+  },
+];
+
 export const movies = [
   {
     id: 1,

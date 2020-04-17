@@ -10,7 +10,7 @@ import {
   Dimensions,
   FlatList,
 } from 'react-native';
-import {movies} from '../moviesMock';
+import {movies} from '../mock';
 
 const Home = () => {
   const m1 = [...movies].sort(() => 0.5 - Math.random());

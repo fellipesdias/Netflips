@@ -15,7 +15,7 @@ const Login = ({navigation}) => {
   const [loading, setLoading] = useState(false);
   const [user, setUser] = useState('');
   const [password, setPassword] = useState('');
-  const [msg, setMsg] = useState(null);
+  const [msg, setMsg] = useState('');
 
   const login = () => {
     setMsg('');
